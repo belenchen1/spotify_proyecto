@@ -66,8 +66,17 @@
 			</div>
 		</div>
 	</div>
+<br>
+
+ <div class = "timeline">
+		<h1> Spotify tiene más de 100 millones de tracks </h1>
+		<p>Si cada track fuera una persona podrías llenar 6052 Movistar Arena.</p>
+</div>
+
+	<audio bind:this={sound} src="/assets/large-crowd-applause-6250.mp3" preload="auto"></audio>
+	<img style="margin: 2rem auto; width: 50rem; height:auto;" src="/assets/img/ma.jpg" alt="Descripción" on:mouseover={playSound} on:mouseout={stopSound}>	
 	
-		<hr>
+<hr>		
 		<div class="top50">
 			<h2>¿Qué se escuchó en 2023?</h2>
 			
@@ -231,6 +240,7 @@
 		cursor: url('/assets/img/ojo_cursor.png'), auto;;
 		box-shadow: 0px 0px 20px 0px rgba(195, 227, 255, 0.619); 
 	}
+
 </style>
 
 
@@ -258,5 +268,19 @@
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
+  let sound;
+ 
+ 
+  function playSound() {
+    sound.play().catch(error => console.error("Error al reproducir el sonido:", error));
+  }
 
+  function stopSound() {
+    sound.pause();
+    sound.currentTime = 0; // Reinicia el sonido al principio
+  }
 </script>
+
+
+	  
+

@@ -63,4 +63,5 @@ import WIP from "$components/helpers/WIP.svelte";
 	#idx.loaded {
 		opacity: 1; /* Estado final para #idx, haciéndolo completamente visible */
 	}
+	
 </style>
