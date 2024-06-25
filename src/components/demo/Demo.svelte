@@ -68,7 +68,7 @@
 	</div>
 <br>
 
- <div class = "timeline">
+<div class = "timeline">
 		<h1> Spotify tiene más de 100 millones de tracks </h1>
 		<p>Si cada track fuera una persona podrías llenar 6052 Movistar Arena.</p>
 </div>
