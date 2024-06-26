@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	/**
 	 * This component manages which item is most in view for scroll triggering
 	 * example:
@@ -77,4 +77,41 @@
 
 <div bind:this={container}>
 	<slot />
+</div> -->
+<script>
+	import { onMount } from "svelte";
+
+	export let root = null;
+	let container;
+
+	let h1Element;
+	let pElement;
+	let imgElement;
+
+	onMount(() => {
+		 window.addEventListener('scroll', handleScroll);
+		 return () => {
+			  window.removeEventListener('scroll', handleScroll);
+		 };
+	});
+
+	function handleScroll() {
+		 const h1Rect = h1Element.getBoundingClientRect();
+		 const imgRect = imgElement.getBoundingClientRect();
+		 const containerRect = container.getBoundingClientRect();
+
+		 const startPosition = h1Rect.bottom + 16 - containerRect.top; // 16px = 1rem
+		 const stopPosition = imgRect.top - pElement.offsetHeight - 8 - containerRect.top; // 8px = 0.5rem
+
+		 let newTop = window.scrollY + startPosition;
+		 newTop = Math.max(newTop, startPosition);
+		 newTop = Math.min(newTop, stopPosition);
+
+		 pElement.style.position = 'absolute';
+		 pElement.style.top = `${newTop}px`;
+	}
+</script>
+
+<div bind:this={container}>
+	<slot {h1Element} {pElement} {imgElement} />
 </div>

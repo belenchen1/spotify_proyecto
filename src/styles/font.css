@@ -1,20 +1,44 @@
 @font-face {
+	font-family: 'Titania';
+	src: url('./fonts/Titania.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Plein';
+	src: url('./fonts/Plein-Black.otf') format('opentype');
+	font-weight:bolder;
+}
+@font-face {
+	font-family: 'Plein';
+	src: url('./fonts/Plein-Bold.otf') format('opentype');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'Plein';
+	src: url('./fonts/Plein-Medium.otf') format('opentype');
+	font-weight: medium;
+}
+@font-face {
+	font-family: 'Plein';
+	src: url('./fonts/Plein-Light.otf') format('opentype');
+	font-weight: light;
+}
+@font-face {
+	font-family: 'Plein';
+	src: url('./fonts/Plein-Regular.otf') format('opentype');
+	font-weight: normal;
+}
+/* ----------------------- */
+
+
+
+@font-face {
 	font-family: "Atlas Grotesk";
 	src: url("https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
-}
-
-@font-face {
-	font-family: 'Titania';
-	src: url('Titania.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Archivo';
-	src: url('Archivo.ttf') format('truetype');
 }
 
 @font-face {

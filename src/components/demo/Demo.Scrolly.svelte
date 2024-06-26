@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 	let value;
 </script>
@@ -36,4 +36,14 @@
 	.step p {
 		padding: 1rem;
 	}
-</style>
+</style> -->
+<script>
+	import Scrolly from "$components/helpers/Scrolly.svelte";
+	let h1Element, pElement, imgElement;
+</script>
+
+<Scrolly bind:h1Element bind:pElement bind:imgElement>
+	<h1 bind:this={h1Element}>Spotify tiene más de 100 millones de tracks</h1>
+	<p bind:this={pElement}>Si cada track fuera una persona podrías llenar <b>6052</b> Movistar Arena.</p>
+	<img bind:this={imgElement} src="/assets/large-crowd-applause-6250.mp3" alt="Una imagen">
+</Scrolly>

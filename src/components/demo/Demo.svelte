@@ -1,4 +1,8 @@
-
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>What We Listen</title>
+</head>
 
 <div id="black-overlay" class:loaded={isLoaded}></div>
 <div id="demo" class:loaded={isLoaded} style="margin-bottom: -2rem !important;">
@@ -7,7 +11,7 @@
 		style="margin:10rem auto 6rem; width:45em"
 		alt=""
 	/>
-	<div class="timeline">
+	<div id="timeline" class="timeline">
 		<h1>De la Radio al Streaming</h1>
 		<p>La evolución del consumo de la música</p>
 		<div class="timeline-container">
@@ -42,18 +46,9 @@
 	</div>
 	<div class="spotify">
 		<h2>Plataformas de streaming</h2>
-		<p>
-			Spotify, lanzado en 2008, se ha convertido en el servicio de streaming más
-			importante con el tiempo.
+		<p style="margin: auto 10rem;">
+			Desde su lanzamiento en 2008, <b style="color: --verde-spotify;">Spotify</b> se convirtió en el servicio de streaming más importante.
 		</p>
-		<!-- <div style="display: flex; justify-content:center; align-items:center;">
-			<iframe src='https://flo.uri.sh/visualisation/18476480/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:80%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-			<img src="/assets/img/subtitle_spotify.png" alt="" style='width:30%;'>
-		</div>
-		<div style="display: flex; justify-content:center; align-items:center;">
-			<p>Casi la mitad de los usuarios son <br><b style="font-family: 'Titanium'; font-size:2rem;">Premium</b></p>
-			<iframe src='https://flo.uri.sh/visualisation/18477205/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:400px;height:400px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-		</div> -->
 		<div style="ustify-items: center; align-items: center;">
 			<div>
 			<div style="display: flex; justify-content:center; align-items:center;">
@@ -68,15 +63,40 @@
 	</div>
 <br>
 
-<div class = "timeline">
-		<h1> Spotify tiene más de 100 millones de tracks </h1>
-		<p>Si cada track fuera una persona podrías llenar 6052 Movistar Arena.</p>
-</div>
-
-	<audio bind:this={sound} src="/assets/large-crowd-applause-6250.mp3" preload="auto"></audio>
-	<img style="margin: 2rem auto; width: 50rem; height:auto;" src="/assets/img/ma.jpg" alt="Descripción" on:mouseover={playSound} on:mouseout={stopSound}>	
+<div class="tracks">
+	<h1>Spotify tiene más de 100 millones de tracks</h1>
+	<!--<p>Si cada track fuera una persona podrías llenar <b>6052</b> Movistar Arena.</p>
+	 <audio bind:this={sound} src="/assets/large-crowd-applause-6250.mp3" preload="auto"></audio>
+	<img src="/assets/img/ma.jpg" alt="Descripción" on:mouseover={playSound} on:mouseout={stopSound}>	  -->
+	<p>Si cada track fuera...</p>
+	<iframe src='https://flo.uri.sh/visualisation/18519085/embed' title='' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:110%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+	<!-- <iframe src='https://flo.uri.sh/visualisation/18518651/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe> -->
+	<!-- <iframe src='https://flo.uri.sh/story/2451551/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe> -->
 	
-<hr>		
+	<!-- <div id="my-wrapper">
+      <div
+         class="flourish-embed"
+         data-src="story/2451551"
+         data-url="https://flo.uri.sh/story/2451551/embed"
+         data-height="100%"
+      >
+         <script src="https://public.flourish.studio/resources/embed.js"></script>
+      </div>
+      <div>
+         <a href="#story/2451551/slide-1"></a>
+			<p>hola1</p>
+      </div>
+      <div>
+         <a href="#story/2451551/slide-2"></a>
+			<p>hola2</p>
+      </div>
+		<div>
+         <a href="#story/2451551/slide-3"></a>
+			<p>hola3</p>
+      </div>
+   </div> -->
+</div> 
+
 		<div class="top50">
 			<h2>¿Qué se escuchó en 2023?</h2>
 			
@@ -106,9 +126,10 @@
 	}
 	
 	#demo p{
-		font-family: "Archivo", sans-serif;
-		font-weight: lighter;
+		font-family: "Plein", sans-serif;
+		font-weight: normal;
 		text-align: center;
+		letter-spacing: 0.3px;
 	}
 
 /* ------------------------------------- timeline ----------------------------------- */
@@ -120,7 +141,7 @@
 		.timeline {
 			text-align: center;
 			color: white;
-			margin-top: 20px;
+			/* margin-top: 20px; */
 		}
 
 		.timeline-container {
@@ -181,20 +202,24 @@
 		}
 
 		.timeline h1 {
-			font-family: "Titania";
-			font-size: 2.5em;
+			font-family: "Plein";
+			font-size: 2.8rem;
+			font-weight: bolder;
 		}
 
 		.timeline p {
 			font-size: 1.4em;
+			margin-top: -1.2rem;
 			margin-bottom: 40px;
+			letter-spacing: 1.5px;
+			color: rgba(255, 255, 255, 0.749);
 		}
-/* ------------------------------------------------------------------ */
 
+	/* ------------------------------------------------------------------ */
 	.spotify h2 {
 		font-family: "Titania";
 		font-size: 2.5rem;
-		margin: -1rem auto 1.5rem;
+		margin: -0.6rem auto 1rem;
 		background-image: url("assets/img/fondo.jpg");
 		background-size: cover;
 		-webkit-background-clip: text;
@@ -203,12 +228,48 @@
 		text-align: center;
 	}
 	.spotify p {
-		font-size: 1.2em;
+		font-size: 1.4em;
 		margin-bottom: 0;
 	}
 	.spotify img{
-		width: 16rem;
+		width: 17rem;
 	}
+	/* ----------------------------------------------------------------- */
+	/* .tracks {
+		position: relative;
+	} */
+	.tracks p {
+		/* 
+		position: absolute;
+		top: 24rem; 
+		left: 10rem; 
+		transition: top 0.6s ease-out;
+		*/
+		font-family: 'Plein';
+		font-weight: light !important;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+	.tracks h1{
+		font-family: 'Plein';
+		font-weight: bolder;
+		font-size: 2.3rem;
+		text-align: center;
+		color: white;
+	}
+	.tracks img{
+		margin: 0.5rem auto 2rem; width: 40rem; height:auto;
+	}
+	/* .tracks iframe{
+		position: relative;
+		top: 200rem;
+		left: 19.5rem;
+	} */
+	.tracks iframe{
+		position: relative;
+		left: -2.2rem;
+	}
+
 	/* ------------------------------------------------------------------- */
 	.top50 {
 		display: flex;
@@ -221,7 +282,7 @@
 	}
 
 	.top50 h2 {
-		margin: 3rem auto 0rem;
+		margin: 0rem auto 0rem;
 		font-size: 2.5rem;
 		font-family: 'Titania';
 		background-image: url("assets/img/fondo2.jpg");
@@ -232,7 +293,7 @@
 	}
 
 	.top50 img {
-		margin: 3rem auto 3rem;
+		margin: 3rem auto 10rem;
 		height: auto;
 	}
 	.top50 img:hover {
@@ -245,42 +306,44 @@
 
 
 <script>
-	import DemoLink from "$components/demo/Demo.Link.svelte";
-	import DemoImg from "$components/demo/Demo.Img.svelte";
-	import DemoButtonSet from "$components/demo/Demo.ButtonSet.svelte";
-	import DemoRange from "$components/demo/Demo.Range.svelte";
-	import DemoSelect from "$components/demo/Demo.Select.svelte";
-	import DemoToggle from "$components/demo/Demo.Toggle.svelte";
-	import DemoSortTable from "$components/demo/Demo.SortTable.svelte";
-	import DemoSvelteElement from "$components/demo/Demo.SvelteElement.svelte";
-	import DemoSvelteComponent from "$components/demo/Demo.SvelteComponent.svelte";
-	import DemoFigure from "$components/demo/Demo.Figure.svelte";
-	import DemoTip from "$components/demo/Demo.Tip.svelte";
-	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 	import { onMount } from "svelte";
+
 	let isLoaded = false;
+	let sound;
+
 	onMount(() => {
-		setTimeout(() => {
-			isLoaded = true;
-		}, 1400);
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
+		 // Carga dinámica del script de Flourish Scrolly
+		 const script = document.createElement('script');
+		 script.src = "https://cdn.flourish.rocks/flourish-scrolly-v3.1.0.min.js";
+		 script.onload = () => {
+			  // Una vez cargado el script, inicializa Flourish Scrolly
+			  initFlourishScrolly();
+			  isLoaded = true;
+		 };
+		 document.head.appendChild(script);
+
+		 // Configuración adicional
+		 setTimeout(() => {
+			  isLoaded = true; // Esta línea parece redundante dado el manejo de carga del script
+		 }, 1400);
+
+		 window.addEventListener('scroll', handleScroll);
+		 return () => {
+			  window.removeEventListener('scroll', handleScroll);
+		 };
 	});
-  let sound;
- 
- 
-  function playSound() {
-    sound.play().catch(error => console.error("Error al reproducir el sonido:", error));
-  }
 
-  function stopSound() {
-    sound.pause();
-    sound.currentTime = 0; // Reinicia el sonido al principio
-  }
+	function playSound() {
+		 sound.play().catch(error => console.error("Error al reproducir el sonido:", error));
+	}
+
+	function stopSound() {
+		 sound.pause();
+		 sound.currentTime = 0; // Reinicia el sonido al principio
+	}
+
+	// Asegúrate de definir la función handleScroll si se va a usar
+	function handleScroll() {
+		 // Lógica para manejar el evento de desplazamiento
+	}
 </script>
-
-
-	  
-
