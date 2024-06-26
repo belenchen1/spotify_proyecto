@@ -163,6 +163,7 @@ Sin embargo, la diferencia es mínima, indicando que el contenido explícito no 
     <div class="contenedor">
          <div class="texto" >
         <h2>Los artistas son principalmente estadounidenses</h2>
+        <p> El gráfico muestra que la mayoría de los artistas en Spotify provienen de países angloparlantes, como Estados Unidos y Reino Unido, lo que indica una falta de diversidad geográfica. A pesar de que Spotify ofrece acceso a millones de canciones de artistas de todo el mundo, la distribución no refleja una amplia variedad de orígenes culturales y lingüísticos.</p>
         </div>
          <div class="grafico">
         <iframe src='https://flo.uri.sh/visualisation/18501081/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:80%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
