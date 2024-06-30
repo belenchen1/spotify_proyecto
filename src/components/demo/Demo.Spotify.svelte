@@ -9,10 +9,9 @@
 	<title>What We Listen</title>
 </head>
 <body>
-	<div class="video-header">
+	<div id="video" class="video-header">
 		<video autoplay muted loop id="videoBackground">
 			<source src="/assets/header.mp4" type="video/mp4" />
-			Tu navegador no soporta videos HTML5.
 		</video>
 	</div>
 
@@ -28,7 +27,6 @@
 				una audiencia global diversa.
 			</p>
 		</div>
-
 		<div class="grafico">
 			<iframe
 				src="https://flo.uri.sh/visualisation/18500630/embed"
@@ -36,22 +34,18 @@
 				class="flourish-embed-iframe"
 				frameborder="0"
 				scrolling="no"
-				style="width:100%;height:600px;"
+				style="width:100%;height:480px;"
 				sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
 			></iframe>
 		</div>
 	</div>
+
 	<div class="contenedor">
 		<div class="texto">
-			<img
-				style="width:8rem; margin: 1rem auto;"
-				src="/assets/img/explicit.png"
-				alt=""
-			/>
+			<img class="parental-advisory" src="/assets/img/explicit.png" alt=""/>
+			<h2>¿Censura o Gustos?</h2>
 			<p>
-				<b>¿Censura o Preferencia?</b>
-				Aunque las canciones no explícitas fueron un poquito más comunes, la diferencia
-				casi no se nota.
+				Aunque las canciones no explícitas fueron un poquito más populares, el impacto de la 'censura' no marca la diferencia.
 			</p>
 		</div>
 		<div class="grafico">
@@ -70,10 +64,8 @@
 		<div class="texto">
 			<h2>¿Diversidad cultural?</h2>
 			<p>
-				El dominio del inglés como idioma se traduce al escenario musical: La
-				mayoría de los artistas vienen de EE.UU. y el Reino Unido. Aunque hay
-				millones de canciones de todo el mundo, la diversidad cultural y
-				lingüística no se refleja completamente en su oferta.
+				El dominio del inglés se traduce al escenario musical: La
+				mayoría de los artistas del top 50 vienen de <br> EE.UU. y el Reino Unido.
 			</p>
 		</div>
 		<div class="grafico">
@@ -88,59 +80,9 @@
 			></iframe>
 		</div>
 	</div>
-	<h2>TOP 5 2023</h2>
 	<div class="scrolly-container">
-		<div>
-			<iframe
-				title="song"
-				style="border-radius:8px;"
-				src="https://open.spotify.com/embed/track/1BxfuPKGuaTgP7aM0Bbdwr?utm_source=generator"
-				frameBorder="0"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
-			<iframe
-				title="song"
-				style="border-radius:8px;"
-				src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n?utm_source=generator"
-				frameBorder="0"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
-			<iframe
-				title="song"
-				style="border-radius:8px;"
-				src="https://open.spotify.com/embed/track/4Dvkj6JhhA12EX05fT7y2e?utm_source=generator"
-				frameBorder="0"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
-			<iframe
-				title="song"
-				style="border-radius:8px;"
-				src="https://open.spotify.com/embed/track/7MXVkk9YMctZqd1Srtv4MB?utm_source=generator"
-				frameBorder="0"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
-			<iframe
-				title="song"
-				style="border-radius:8px;"
-				src="https://open.spotify.com/embed/track/1kuGVB7EU95pJObxwvfwKS?utm_source=generator"
-				frameBorder="0"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			></iframe>
-		</div>
-	</div>
-
-    <div class="">
-		<div>
+		<h2>TOP 5 2023</h2>
+		<div class="top5">
 			<iframe
 				title="song"
 				style="border-radius:8px;"
@@ -209,7 +151,10 @@
 		src: url("../../styles/fonts/Plein-Regular.otf") format("opentype");
 		font-weight: normal;
 	}
-
+	@font-face {
+		font-family: 'Titania';
+		src: url('./fonts/Titania.ttf') format('truetype');
+	}
 	p {
 		font-family: "Plein Normal";
 		color: white;
@@ -256,13 +201,6 @@
 		align-items: center;
 	}
 
-	iframe {
-		width: 300px; /* Ajusta el ancho para que coincida con la altura deseada */
-		height: 300px; /* Hace que el iframe sea cuadrado */
-		border-radius: 8px; /* Opcional: añade bordes redondeados */
-		width: 100%;
-	}
-
 	.title,
 	.graph {
 		flex: 1;
@@ -271,7 +209,7 @@
 
 	.contenedor {
 		margin-top: 8rem;
-		felx-direction: row;
+		flex-direction: row;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -287,34 +225,46 @@
 		width: 45%; /* Ajusta según necesites */
 		text-align: left;
 		order: 1;
-		margin: 4rem;
+		/* align-items: center; */
+		margin: 1rem;
 	}
-	.texto img {
+	.texto, .grafico {
+		flex: 1; /* Hace que los elementos hijos ocupen el mismo espacio */
+		display: flex;
+		flex-direction: column;
+		justify-content: center; /* Alinea el contenido de texto y gráfico verticalmente en el centro */
+	}
+	.parental-advisory {
 		display: flex;
 		justify-content: center;
 		margin-bottom: 3rem;
+		width:6rem; 
+		margin: 0rem auto;
 	}
 	.grafico {
 		width: 50%; /* Ajusta según necesites */
 		text-align: right;
 		order: 2;
 	}
-	.scrolly-container {
-		margin-top: -2rem;
+	.top5{
 		display: flex;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
-		scroll-snap-type: x mandatory; /* Opcional: para un efecto de "snap" al desplazar */
-		gap: 8rem;
-		width: 100%;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		margin-bottom: -3rem;
+	}
+	.top5 iframe {
+		height: 32rem;
+		flex-grow: 1; /* Hace que los iframes crezcan de manera equitativa para ocupar el espacio */
+		max-width: 18%; /* Establece un máximo de ancho para cada iframe */
+		/* margin-bottom: -3rem !important; */
+	}
+	.scrolly-container h2{
+		font-family: 'Titania';
+		font-size: 3rem;
+		letter-spacing: 4px;
+		margin-bottom: 4rem;
 	}
 
-	.scrolly-container > div {
-		margin-top: 4rem;
-		flex: 0 0 auto; /* Evita que los divs se estiren */
-		display: flex; /* Asegura que los iframes estén en línea */
-		gap: 20px; /* Espacio entre iframes */
-	}
 	.contenedor:nth-child(3) {
 		display: flex;
 		flex-direction: row-reverse;
