@@ -19,7 +19,7 @@
 		<div class="texto">
 			<h2>Pop: ¿rey indiscutible?</h2>
 			<p>
-				El <b style="color: #4100f5">Pop</b> sigue dominando el escenario
+				El <b style="color: #024cf7">Pop</b> sigue dominando el escenario
 				musical, pero se destaca una nueva tendencia al
 				<b style="color: #cdf564">K-Pop</b>
 				en particular. Sin embargo, el
@@ -80,6 +80,72 @@
 			></iframe>
 		</div>
 	</div>
+	<div class="contenedor">
+		<div class="texto">
+			<h2>¿Un 'Hombre Show'?</h2>
+			<p>
+				El 76% del Top 50 son artistas hombres. Hay espacio para que más voces femeninas hagan eco en la industria musical. ¿Podrán más voces femeninas subir el volumen y cambiar esta melodía?
+		</div>
+		<div class="grafico">
+			<iframe src='https://flo.uri.sh/visualisation/18525993/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+		</div>
+	</div>
+	<div class="contenedor">
+		<div class="texto">
+			<h2>¿Y las Bandas?</h2>
+			<p>
+				Son pocas las bandas que llegan al Top 50, pero son variadas: desde géneros más populares como rock alternativo o pop-rock (
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4BaAkp?si=e370a31caaab43c1" target="_blank">Artic Monkeys
+						<span>
+							<img src="/assets/img/albums/artic.jpg" alt="artic monkeys" />
+						</span>
+					</a>
+					,
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO4dpvkA?si=bef6aea59bd5407c" target="_blank">The Neighbourhood
+						<span>
+							<img src="/assets/img/albums/tn.jpg" alt="the neighbourhood" />
+						</span>
+					</a>
+					, y
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO3r3n5S?si=8a190507a7194db2" target="_blank">OneRepublic
+						<span>
+							<img src="/assets/img/albums/onerep.jpg" alt="" />
+						</span>
+					</a>
+					) y K-Pop (
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DWVGwK1DVdGDJ?si=8a65b066012e4620" target="_blank">NewJeans
+						<span>
+							<img src="/assets/img/albums/newjeans.jpeg" alt="" />
+						</span>
+					</a>
+					,
+					<a class="popup" href="https://open.spotify.com/artist/4GJ6xDCF5jaUqD6avOuQT6?si=sk2oLxYASgSYW5ndGC5HXg" target="_blank">FIFTY FIFTY
+						<span>
+							<img src="/assets/img/albums/fifty.png" alt="" />
+						</span>
+					</a>
+					), hasta música mexicana (
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO0valoY?si=45235349fa3947ac" target="_blank">Eslabon Armado
+						<span>
+							<img src="/assets/img/albums/esl.jpg" alt="" />
+						</span>
+					</a>
+					, 
+					<a class="popup" href="https://open.spotify.com/playlist/37i9dQZF1DZ06evO473sfm?si=99ad51220eec47fe" target="_blank">Grupo Frontera
+						<span>
+							<img src="/assets/img/albums/grupo.jpg" alt="" />
+						</span>
+					</a>
+					).
+			</p>
+		</div>
+		<div class="grafico">
+			<iframe src='https://flo.uri.sh/visualisation/18598336/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:450px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+		</div>
+	</div>
+
+
+
 	<div class="scrolly-container">
 		<h2>TOP 5 2023</h2>
 		<div class="top5">
@@ -265,7 +331,7 @@
 		margin-bottom: 4rem;
 	}
 
-	.contenedor:nth-child(3) {
+	.contenedor:nth-child(5) {
 		display: flex;
 		flex-direction: row-reverse;
 		justify-content: space-between;
@@ -292,4 +358,30 @@
 			-50%
 		); /* Centra el video exactamente en el medio */
 	}
+		.popup-wrap { position:relative;}
+		.popup span { 
+			position:absolute;
+			visibility:hidden;
+			
+		}
+		.popup:hover, .popup:hover span { 
+			visibility:visible;
+			z-index:1;
+			
+		}  
+		img {
+		max-width: 10rem;
+		max-height: 10rem;
+		}
+		a{
+			font-family: "Plein Normal";
+			color: white;
+			font-size: 1.5rem;
+			text-align: center;
+			text-decoration: none;
+			font-style: italic;
+		}
+		a:hover{
+			color: #2361f0;
+		}
 </style>
