@@ -5,105 +5,84 @@
 </head>
 
 <div id="black-overlay" class:loaded={isLoaded}></div>
+<div class="video-header">
+	<video src="assets/video-header-1.mp4" autoplay bind:muted={videoMuted} bind:this={videoElement} on:ended={handleVideoEnd}>
+		Tu navegador no soporta el elemento <code>video</code>.
+		<track kind="captions" src="" srclang="es" label="Español">
+	</video>
+	<button class="sound-button" on:click={toggleSound}>
+		{#if videoMuted}
+			<img src="assets/img/sound-off.png" alt="">
+		{:else}
+			<img src="assets/img/sound-on.png" alt="">
+		{/if}
+	</button>
+</div>
 <div id="demo" class:loaded={isLoaded} style="margin-bottom: -2rem !important;">
-	<img
-		src="assets/img/header.png"
-		style="margin:10rem auto 6rem; width:45em"
-		alt=""
-	/>
-	<div id="timeline" class="timeline">
-		<h1>De la Radio al Streaming</h1>
-		<p>La evolución del consumo de la música</p>
-		<div class="timeline-container">
-			<img src="assets/img/timeline/linea.png" class="linea" alt="" />
-			<div class="timeline-item">
-				<img src="assets/img/timeline/radio.png" alt="Radio" class="radio" />
-			</div>
-			<div class="timeline-item">
-				<img src="assets/img/timeline/vinyl.png" alt="Vinyl" class="vinilo" />
-			</div>
-			<div class="timeline-item">
-				<img
-					src="assets/img/timeline/cassette.png"
-					alt="Cassette"
-					class="cassette"
-				/>
-			</div>
-			<div class="timeline-item">
-				<img src="assets/img/timeline/cd.png" alt="CD" class="cd" />
-			</div>
-			<div class="timeline-item">
-				<img
-					src="assets/img/timeline/walkman.png"
-					alt="Walkman"
-					class="walkman"
-				/>
-			</div>
-			<div class="timeline-item">
-				<img src="assets/img/timeline/mp3.png" alt="MP3" class="mp3" />
+		<div id="timeline" class="timeline">
+			<h1>De la Radio al Streaming</h1>
+			<p>La evolución del consumo de la música</p>
+			<div class="timeline-container">
+				<img src="assets/img/timeline/linea.png" class="linea" alt="" />
+				<div class="timeline-item">
+					<img src="assets/img/timeline/radio.png" alt="Radio" class="radio" />
+				</div>
+				<div class="timeline-item">
+					<img src="assets/img/timeline/vinyl.png" alt="Vinyl" class="vinilo" />
+				</div>
+				<div class="timeline-item">
+					<img
+						src="assets/img/timeline/cassette.png"
+						alt="Cassette"
+						class="cassette"
+					/>
+				</div>
+				<div class="timeline-item">
+					<img src="assets/img/timeline/cd.png" alt="CD" class="cd" />
+				</div>
+				<div class="timeline-item">
+					<img
+						src="assets/img/timeline/walkman.png"
+						alt="Walkman"
+						class="walkman"
+					/>
+				</div>
+				<div class="timeline-item">
+					<img src="assets/img/timeline/mp3.png" alt="MP3" class="mp3" />
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="spotify">
-		<h2>Plataformas de streaming</h2>
-		<p style="margin: auto 10rem;">
-			Desde su lanzamiento en 2008, <b style="color: --verde-spotify;">Spotify</b> se convirtió en el servicio de streaming más importante.
-		</p>
-		<div style="ustify-items: center; align-items: center;">
-			<div>
-			<div style="display: flex; justify-content:center; align-items:center;">
-				<iframe src='https://flo.uri.sh/visualisation/18476480/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:80%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-				<img src="/assets/img/subtitle_spotify.png" alt="" style='width:30%;'>
-			</div>
-			<div style="display: flex; justify-content:center; align-items:center;">
-				<p>Casi la mitad de los usuarios son <br><b style="font-family: 'Titanium'; font-size:2rem;">Premium</b></p>
-				<iframe src='https://flo.uri.sh/visualisation/18477205/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:400px;height:400px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+		<div class="spotify">
+			<h2>Plataformas de streaming</h2>
+			<p style="margin: auto 10rem;">
+				Desde su lanzamiento en 2008, <b style="color: --verde-spotify;">Spotify</b> se convirtió en el servicio de streaming más importante.
+			</p>
+			<div style="ustify-items: center; align-items: center;">
+				<div>
+				<div style="display: flex; justify-content:center; align-items:center;">
+					<iframe src='https://flo.uri.sh/visualisation/18476480/embed' title='' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='marrgin-top:-5rem; width:100%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+					<img src="/assets/img/subtitle_spotify.png" alt="" style='marrgin-top:-1rem; width:35%;'>
+				</div>
+				<div style="display: flex; justify-content:center; align-items:center;">
+					<p>Casi la mitad de los usuarios son <br><b style="font-family: 'Titanium'; font-size:2rem;">Premium</b></p>
+					<iframe src='https://flo.uri.sh/visualisation/18477205/embed' title='' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+				</div>
 			</div>
 		</div>
-	</div>
-<br>
+	<br>
 
-<div class="tracks">
-	<h1>Spotify tiene más de 100 millones de tracks</h1>
-	<!--<p>Si cada track fuera una persona podrías llenar <b>6052</b> Movistar Arena.</p>
-	 <audio bind:this={sound} src="/assets/large-crowd-applause-6250.mp3" preload="auto"></audio>
-	<img src="/assets/img/ma.jpg" alt="Descripción" on:mouseover={playSound} on:mouseout={stopSound}>	  -->
-	<p>Si cada track fuera...</p>
-	<iframe src='https://flo.uri.sh/visualisation/18519085/embed' title='' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:110%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
-	<!-- <iframe src='https://flo.uri.sh/visualisation/18518651/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe> -->
-	<!-- <iframe src='https://flo.uri.sh/story/2451551/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe> -->
-	
-	<!-- <div id="my-wrapper">
-      <div
-         class="flourish-embed"
-         data-src="story/2451551"
-         data-url="https://flo.uri.sh/story/2451551/embed"
-         data-height="100%"
-      >
-         <script src="https://public.flourish.studio/resources/embed.js"></script>
-      </div>
-      <div>
-         <a href="#story/2451551/slide-1"></a>
-			<p>hola1</p>
-      </div>
-      <div>
-         <a href="#story/2451551/slide-2"></a>
-			<p>hola2</p>
-      </div>
-		<div>
-         <a href="#story/2451551/slide-3"></a>
-			<p>hola3</p>
-      </div>
-   </div> -->
-</div> 
+	<div class="tracks">
+		<h1>Spotify tiene más de 100 millones de tracks</h1>
+		<p>Si cada track fuera...</p>
+		<div class="video-container">
+			<video src="assets/video_cards.mp4" type="video/mp4" loop on:mouseenter={togglePlay}></video>
+	</div>
+	</div> 
 
-		<div class="top50">
-			<h2>¿Qué se escuchó en 2023?</h2>
-			
-				<a href=".\src\components\demo\Demo.Spotify.svelte"><img src="/assets/img/topglobal.jpg" alt=""></a>
-				<!-- <a href="demo/spotify"><img src="/assets/img/topglobal.jpg" alt=""></a> -->
-		
-		</div>
+	<div class="top50">
+		<h2>¿Qué se escuchó en 2023?</h2>
+			<a href=".\src\components\demo\Demo-Spotify.svelte"><img src="/assets/img/topglobal.jpg" alt=""></a>
+	</div>
 	</div>
 </div>
 
@@ -131,6 +110,34 @@
 		text-align: center;
 		letter-spacing: 0.3px;
 	}
+	.video-header {
+		position: relative;
+		top: 4.5rem;
+		width: 100%;
+		height: 100vh; 
+		overflow: hidden;
+		margin-bottom: 12rem;
+	}
+
+	.video-header video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; 
+	}
+	.sound-button {
+		position: absolute;
+		top: 1.5rem; 
+		right: 5px; 
+		z-index: 10; 
+		width: 2.5rem;
+		padding: 10px;
+		color: #fff;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		border-radius: 5px;
+		opacity: 1;
+	}
 
 /* ------------------------------------- timeline ----------------------------------- */
 		.linea {
@@ -141,7 +148,6 @@
 		.timeline {
 			text-align: center;
 			color: white;
-			/* margin-top: 20px; */
 		}
 
 		.timeline-container {
@@ -176,17 +182,17 @@
 			cursor: "../statics/assets/img/cursor.png" 32 32;
 		}
 		.radio {
-			top: 0;
-			left: 4rem;
+			top: 5rem;
+			left: 5rem;
 		}
 		.vinilo {
-			top: 25rem;
-			right: 3.5rem;
+			top: 22rem;
+			right: 4.5rem;
 		}
 		.cassette {
-			top: 45rem;
-			left: 4rem;
-			width: 20rem !important;
+			top: 43rem;
+			left: 2.7rem;
+			width: 22.5rem !important;
 		}
 		.cd {
 			top: 60rem;
@@ -218,8 +224,8 @@
 	/* ------------------------------------------------------------------ */
 	.spotify h2 {
 		font-family: "Titania";
-		font-size: 2.5rem;
-		margin: -0.6rem auto 1rem;
+		font-size: 3.5rem;
+		margin: -0.6rem auto 0.3rem;
 		background-image: url("assets/img/fondo.jpg");
 		background-size: cover;
 		-webkit-background-clip: text;
@@ -231,23 +237,14 @@
 		font-size: 1.4em;
 		margin-bottom: 0;
 	}
-	.spotify img{
-		width: 17rem;
-	}
-	/* ----------------------------------------------------------------- */
-	/* .tracks {
-		position: relative;
+	/* .spotify img{
+		width: 30rem;
 	} */
+	/* ----------------------------------------------------------------- */
 	.tracks p {
-		/* 
-		position: absolute;
-		top: 24rem; 
-		left: 10rem; 
-		transition: top 0.6s ease-out;
-		*/
 		font-family: 'Plein';
 		font-weight: light !important;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
 		text-align: center;
 	}
 	.tracks h1{
@@ -257,17 +254,22 @@
 		text-align: center;
 		color: white;
 	}
-	.tracks img{
-		margin: 0.5rem auto 2rem; width: 40rem; height:auto;
-	}
 	/* .tracks iframe{
 		position: relative;
-		top: 200rem;
-		left: 19.5rem;
-	} */
-	.tracks iframe{
-		position: relative;
 		left: -2.2rem;
+	} */
+	
+	.video-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 5rem;
+	}
+	.video-container video {
+		width: 80%;	
+		height: auto;
+		margin: 1rem auto;
+		border-radius: 1rem;
 	}
 
 	/* ------------------------------------------------------------------- */
@@ -276,9 +278,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: start;
-	}
-	hr{
-		margin-top: 1rem;
 	}
 
 	.top50 h2 {
@@ -298,9 +297,10 @@
 	}
 	.top50 img:hover {
 		transform: scale(1.03);
-		cursor: url('/assets/img/ojo_cursor.png'), auto;;
+		cursor: url('/assets/img/ojo_cursor.png'), auto;
 		box-shadow: 0px 0px 20px 0px rgba(195, 227, 255, 0.619); 
 	}
+
 
 </style>
 
@@ -312,38 +312,50 @@
 	let sound;
 
 	onMount(() => {
-		 // Carga dinámica del script de Flourish Scrolly
-		 const script = document.createElement('script');
-		 script.src = "https://cdn.flourish.rocks/flourish-scrolly-v3.1.0.min.js";
-		 script.onload = () => {
-			  // Una vez cargado el script, inicializa Flourish Scrolly
-			  initFlourishScrolly();
-			  isLoaded = true;
-		 };
-		 document.head.appendChild(script);
+		// Carga dinámica del script de Flourish Scrolly
+		const script = document.createElement('script');
+		script.src = "https://cdn.flourish.rocks/flourish-scrolly-v3.1.0.min.js";
+		script.onload = () => {
+			// Una vez cargado el script, inicializa Flourish Scrolly
+			initFlourishScrolly();
+			isLoaded = true;
+		};
+		document.head.appendChild(script);
 
 		 // Configuración adicional
-		 setTimeout(() => {
-			  isLoaded = true; // Esta línea parece redundante dado el manejo de carga del script
-		 }, 1400);
+		setTimeout(() => {
+			isLoaded = true; // Esta línea parece redundante dado el manejo de carga del script
+		}, 1400);
 
-		 window.addEventListener('scroll', handleScroll);
-		 return () => {
-			  window.removeEventListener('scroll', handleScroll);
-		 };
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
 	});
 
-	function playSound() {
-		 sound.play().catch(error => console.error("Error al reproducir el sonido:", error));
+	function togglePlay(event) {
+		const video = event.target;
+		if (video.paused) {
+			video.play();
+		} else {
+			video.pause();
+		}
 	}
 
-	function stopSound() {
-		 sound.pause();
-		 sound.currentTime = 0; // Reinicia el sonido al principio
+	let videoElement;
+
+	// Función para manejar el evento cuando el video termina
+	function handleVideoEnd() {
+		// videoElement.pause(); // Esto pausará el video cuando termine
+		// videoElement.currentTime = 1; // Opcional: rebobina el video al inicio
+		const pausePoint = videoElement.duration - 0.5;
+		videoElement.currentTime = pausePoint > 0 ? pausePoint : 0;
+		videoElement.pause();
 	}
 
-	// Asegúrate de definir la función handleScroll si se va a usar
-	function handleScroll() {
-		 // Lógica para manejar el evento de desplazamiento
+	let videoMuted = true;
+
+	function toggleSound() {
+		videoMuted = !videoMuted;
 	}
 </script>
